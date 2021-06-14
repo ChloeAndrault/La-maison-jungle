@@ -9,8 +9,8 @@ function App(){
   return(
     <div>
       <Banner />
-      <Description />
-      <Cart />
+      {/* <Description /> */}
+      {/* <Cart /> */}
       <ShoppingList />
     </div>
   )
