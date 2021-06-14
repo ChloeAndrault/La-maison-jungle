@@ -1,39 +1,26 @@
 import { plantList } from '../datas/plantList'
 
-function isPresent (list, el){
-
-  let result = false;
-
-  // global
-  list.forEach(element => {
-    //local 
-    if (el === element) {
-      result = true;
-    }
-  });
-  return result;
-}
-
 function ShoppingList() {
+	const categories = plantList.reduce(
+		(acc, plant) =>
+			acc.includes(plant.category) ? acc : acc.concat(plant.category),
+		[]
+	)
 
-  const categories = [];
-
-  plantList.forEach(plant => {
-    if (!isPresent(categories, plant.category) ) {
-      categories.push(plant.category);
-    }
-  });
-
-  return (
-    <div>
-      <ul>
-        {categories.map((category, index) => (
-          <li key={`${category}-${index}`}>{category}</li>
-        ))}
-      </ul>
-    </div>
-  );
+	return (
+		<div>
+			<ul>
+				{categories.map((cat) => (
+					<li key={cat}>{cat}</li>
+				))}
+			</ul>
+			<ul>
+				{plantList.map((plant) => (
+					<li key={plant.id}>{plant.name}</li>
+				))}
+			</ul>
+		</div>
+	)
 }
-
 
 export default ShoppingList
