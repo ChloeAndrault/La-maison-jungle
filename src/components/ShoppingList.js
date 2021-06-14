@@ -1,60 +1,38 @@
 import { plantList } from '../datas/plantList'
 
+function isPresent (list, el){
+
+  let result = false;
+
+  // global
+  list.forEach(element => {
+    //local 
+    if (el === element) {
+      result = true;
+    }
+  });
+  return result;
+}
 
 function ShoppingList() {
-  const unique = [...new Set(plantList.map(item => item.category))];
 
-  const categories = plantList.reduce(
-		(acc, plant) =>
-			acc.includes(plant.category) ? acc : acc.concat(plant.category),
-      // boolean
-      // ? : operateur ternaire         
-      // acc: Si ma categorie est déja dans l'accumulateur je fait rien
-      // acc.concat(plant.category) : Si il n'est pas dedant alors tu rajoute la categorie
-		[]
-	)
-  
+  const categories = [];
+
+  plantList.forEach(plant => {
+    if (!isPresent(categories, plant.category) ) {
+      categories.push(plant.category);
+    }
+  });
+
   return (
     <div>
-      
-      <div>
-        <h2>Liste unique 1 </h2>
-        <ul>
-          {categories.map((cat) => (
-            <li key={cat}>{cat}</li>
-          ))}
-        </ul>
-        <ul>
-          {plantList.map((plant) => (
-            <li key={plant.id}>{plant.name}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <h2>Liste unique 2</h2>
-        <div>{unique}</div>
-      </div>
-
-      <div>
-        <h2>Liste pas unique</h2>
-        <ul>
-          {plantList.map(plant=>(
-            <li>{plant.category}</li>
-          ))}
-        </ul>
-
-        <ul>
-          {plantList.map(plant=>(
-            <li>{plant.name}</li>
-          ))}
-        </ul>
-      </div>
-  
+      <ul>
+        {categories.map((category, index) => (
+          <li key={`${category}-${index}`}>{category}</li>
+        ))}
+      </ul>
     </div>
-
   );
-  
 }
 
 
