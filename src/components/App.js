@@ -1,8 +1,7 @@
 import Banner from './Banner';
 import logo from '../assets/logo.png'
-
-import Description from './Description';
-import Cart from './Cart';
+// import Description from './Description';
+// import Cart from './Cart';
 import ShoppingList from './ShoppingList';
 
 function App(){
