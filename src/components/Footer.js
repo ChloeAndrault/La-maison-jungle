@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../styles/Footer.css'
+import '../styles/Footer.scss'
 
 function Footer() {
 	const [inputValue, setInputValue] = useState('')
@@ -15,11 +15,11 @@ function Footer() {
 	}
 
 	return (
-		<footer className='lmj-footer'>
-			<div className='lmj-footer-elem'>
+		<footer className='ps-footer'>
+			<div className='ps-footer-elem'>
 				Pour les passionné·e·s de plantes 🌿🌱🌵
 			</div>
-			<div className='lmj-footer-elem'>Laissez-nous votre mail :</div>
+			<div className='ps-footer-elem'>Laissez-nous votre mail :</div>
 			<input
 				placeholder='Entrez votre mail'
 				onChange={handleInput}

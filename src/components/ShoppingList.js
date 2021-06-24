@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { plantList } from '../datas/plantList'
 import PlantItem from './PlantItem'
 import Categories from './Categories'
-import '../styles/ShoppingList.css'
+import '../styles/ShoppingList.scss'
 
 function ShoppingList({ cart, updateCart }) {
 
@@ -40,14 +40,14 @@ function ShoppingList({ cart, updateCart }) {
 	}
 
 	return (
-		<div className='lmj-shopping-list'>
+		<div className='ps-shopping-list'>
 			<Categories
 				categories={categories}
 				setActiveCategory={setActiveCategory}
 				activeCategory={activeCategory}
 			/>
 
-			<ul className='lmj-plant-list'>
+			<ul className='ps-plant-list'>
 				{plantList.map(({ id, cover, name, water, light, price, category }) =>
 					!activeCategory || activeCategory === category ? (
 						<div key={id}>

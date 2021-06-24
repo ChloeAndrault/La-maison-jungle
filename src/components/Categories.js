@@ -1,12 +1,12 @@
-import '../styles/Categories.css'
+import '../styles/Categories.scss'
 
 function Categories({ setActiveCategory, categories, activeCategory }) {
 	return (
-		<div className='lmj-categories'>
+		<div className='ps-categories'>
 			<select
 				value={activeCategory}
 				onChange={(e) => setActiveCategory(e.target.value)}
-				className='lmj-categories-select'
+				className='ps-categories-select'
 			>
 				<option value=''>---</option>
 				{categories.map((cat) => (

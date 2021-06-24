@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import '../styles/Cart.css'
+import '../styles/Cart.scss'
 
 function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(true)
@@ -10,14 +10,14 @@ function Cart({ cart, updateCart }) {
 		0
 	)
 	useEffect(() => {
-		document.title = `LMJ: ${total}€ d'achats`
+		document.title = `ps: ${total}€ d'achats`
 	}, [total])
 
 
 	return isOpen ? (
-		<div className='lmj-cart'>
+		<div className='ps-cart'>
 			<button
-				className='lmj-cart-toggle-button'
+				className='ps-cart-toggle-button'
 				onClick={() => setIsOpen(false)}
 			>
 				Fermer
@@ -41,9 +41,9 @@ function Cart({ cart, updateCart }) {
 			)}
 		</div>
 	) : (
-		<div className='lmj-cart-closed'>
+		<div className='ps-cart-closed'>
 			<button
-				className='lmj-cart-toggle-button'
+				className='ps-cart-toggle-button'
 				onClick={() => setIsOpen(true)}
 			>
 				Ouvrir le Panier

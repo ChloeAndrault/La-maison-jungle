@@ -4,11 +4,11 @@ import logo from '../assets/logo.png'
 import Cart from './Cart'
 import Footer from './Footer'
 import ShoppingList from './ShoppingList'
-import '../styles/Layout.css'
+import '../styles/Layout.scss'
 
 function App() {
 	// initialisation du state avec un tableau vide
-	// const [cart, updateCart] = useState([])
+	// const [cart, updateCart] = useState([]) 
 
 	// Sauvegarde du panier
 	const savedCart = localStorage.getItem('cart')
@@ -20,10 +20,18 @@ function App() {
 	return (
 		<div>
 			<Banner>
-				<img src={logo} alt='La maison jungle' className='lmj-logo' />
-				<h1 className='lmj-title'>La maison jungle</h1>
+
+				<figure className='ps-logo'>
+					<img src={logo} alt='La maison jungle'  />
+				</figure>
+
+				<div className="content">
+					<h1 className='ps-title'>Plant store</h1>
+					<h2 className='ps-subtitle'>by Chloé A</h2>
+				</div>
+
 			</Banner>
-			<div className='lmj-layout-inner'>
+			<div className='ps-layout-inner'>
 				<Cart cart={cart} updateCart={updateCart} />
 				<ShoppingList cart={cart} updateCart={updateCart} />
 			</div>

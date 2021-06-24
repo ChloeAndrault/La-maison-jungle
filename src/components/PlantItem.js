@@ -1,5 +1,5 @@
 import CareScale from './CareScale'
-import '../styles/PlantItem.css'
+import '../styles/PlantItem.scss'
 
 function handleClick(plantName) {
 	alert(`Vous voulez acheter 1 ${plantName}? Très bon choix 🌱✨`)
@@ -7,8 +7,8 @@ function handleClick(plantName) {
 
 function PlantItem({ cover, name, water, light, category, price }) {
 	return (
-		<li className='lmj-plant-item' onClick={() => handleClick}>
-			<img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`} />
+		<li className='ps-plant-item' onClick={() => handleClick}>
+			<img className='ps-plant-item-cover' src={cover} alt={`${name} cover`} />
 			<div className="name">{name}</div>
 			<div className="caegory">{category}</div>
 			<div className="price">{price} €</div>
