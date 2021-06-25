@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import '../styles/Cart.scss'
+import basketBlack from '../assets/basket-black.svg'
+import basketGreen from '../assets/basket-green.svg'
+
 
 function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(true)
@@ -15,15 +18,18 @@ function Cart({ cart, updateCart }) {
 
 
 	return isOpen ? (
-		<div className='ps-cart'>
+		<div className='ps-cart open'>
 			<button
 				className='ps-cart-toggle-button'
 				onClick={() => setIsOpen(false)}
 			>
 				Fermer
+				<img src={basketGreen} alt='Panier'  />
 			</button>
+
+
 			{cart.length > 0 ? (
-				<div>
+				<div class="content-basket">
 					<h2>Panier</h2>
 					<ul>
 						{cart.map(({ name, price, amount }, index) => (
@@ -41,12 +47,14 @@ function Cart({ cart, updateCart }) {
 			)}
 		</div>
 	) : (
-		<div className='ps-cart-closed'>
+		<div className='ps-cart closed'>
 			<button
 				className='ps-cart-toggle-button'
 				onClick={() => setIsOpen(true)}
 			>
 				Ouvrir le Panier
+				<img src={basketBlack} alt='Panier'  />
+
 			</button>
 		</div>
 	)

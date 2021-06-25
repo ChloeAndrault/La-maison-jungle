@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Banner from './Banner'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.svg'
 import Cart from './Cart'
 import Footer from './Footer'
 import ShoppingList from './ShoppingList'
@@ -19,22 +19,24 @@ function App() {
 	
 	return (
 		<div>
-			<Banner>
+			<div className="container">
+				<Banner>
 
-				<figure className='ps-logo'>
-					<img src={logo} alt='La maison jungle'  />
-				</figure>
+					<figure className='ps-logo'>
+						<img src={logo} alt='La maison jungle'  />
+					</figure>
 
-				<div className="content">
-					<h1 className='ps-title'>Plant store</h1>
-					<h2 className='ps-subtitle'>by Chloé A</h2>
-				</div>
+					<div className="content">
+						<h1 className='ps-title'>Plant store</h1>
+						<h2 className='ps-subtitle'>by Chloé A</h2>
+					</div>
+				</Banner>
 
-			</Banner>
-			<div className='ps-layout-inner'>
 				<Cart cart={cart} updateCart={updateCart} />
-				<ShoppingList cart={cart} updateCart={updateCart} />
 			</div>
+			<ShoppingList cart={cart} updateCart={updateCart} />
+			
+			
 			<Footer />
 		</div>
 	)
