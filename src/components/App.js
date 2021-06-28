@@ -22,7 +22,7 @@ function App() {
 	useEffect(() => {
 		localStorage.setItem('cart', JSON.stringify(cart))
 	}, [cart])
-	
+
 	return (
 		<div className="body">
 
@@ -39,7 +39,7 @@ function App() {
 				</Banner>
 
 				<div className="right flex">
-					<Phone></Phone>
+					<Phone />
 					<Cart cart={cart} updateCart={updateCart} />
 				</div>
 			</div>
@@ -62,7 +62,6 @@ function App() {
 				<ShoppingList cart={cart} updateCart={updateCart} />
 			</div>
 
-			
 			<Footer />
 		</div>
 	)

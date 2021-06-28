@@ -3,7 +3,7 @@ import '../styles/Cart.scss'
 import basketWhite from '../assets/basket-white.svg'
 
 function Cart({ cart, updateCart, amount }) {
-	const [isOpen, setIsOpen] = useState(true)
+	const [isOpen, setIsOpen] = useState(false)
 	const items = Object.keys(cart)
 
 	const total = items.reduce(

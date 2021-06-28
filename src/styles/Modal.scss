@@ -1,0 +1,16 @@
+.modal{
+  position: absolute;
+  left: 50%; 
+  top: 50%; 
+
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  text-align: center;
+  line-height: 30px;
+
+  .close{
+    display: flex;
+    margin-left: auto;
+  }
+}

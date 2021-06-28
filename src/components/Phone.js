@@ -1,16 +1,40 @@
+import React, { Component } from 'react'
+import Modal from './Modal'
 import '../styles/Phone.scss'
-import phone from '../assets/phone.svg'
+import phoneIcon from '../assets/phone.svg'
 
-function phoneClick() {
-	alert("Une question ? N'hésitez pas a nous appeller au 01.00.00..00.00 🌱✨")
+export default class Phone extends Component {
+
+  state = {
+    visible: false
+  }
+  
+  montre = () => {
+    this.setState({
+      visible: true
+    })
+  }
+
+  cache = () => {
+    this.setState({
+      visible: false
+    })
+  }
+
+  render() {
+    return (
+      <div className="test-modal">
+
+        <button className="ps-phone" onClick={this.montre}> 
+          <img src={phoneIcon} alt='Contactez nous par téléphone'  />
+        </button>
+
+        <Modal 
+          visible ={this.state.visible}
+          cache={this.cache}
+        />
+        
+      </div>
+    )
+  }
 }
-
-function Phone() {
-	return (
-		<div className='ps-phone' onClick={phoneClick}>
-      <img src={phone} alt='Contactez nous par téléphone'  />
-    </div>
-	)
-}
-
-export default Phone
