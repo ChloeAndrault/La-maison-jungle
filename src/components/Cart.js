@@ -38,7 +38,7 @@ function Cart({ cart, updateCart, amount }) {
 			</button>
 
 			{cart.length > 0 ? (
-				<div class="content-basket">
+				<div className="content-basket">
 					<h2>Panier</h2>
 					<ul>
 						{cart.map(({ name, price, amount }, index) => (
@@ -48,11 +48,11 @@ function Cart({ cart, updateCart, amount }) {
 							</div>
 						))}
 					</ul>
-					<h3>Total :{total}€</h3>
+					<h3>Total : {total}€</h3>
 					<button onClick={() => updateCart([])}>Vider le panier</button>
 				</div>
 			) : ( 
-				<div class="content-basket">
+				<div className="content-basket">
 					Votre panier est vide
 				</div>
 			)}
@@ -65,6 +65,9 @@ function Cart({ cart, updateCart, amount }) {
 			>
 				<img src={basketWhite} alt='Panier'  />
 
+				<div className="number">
+					{product}
+				</div>
 
 			</button>
 		</div>

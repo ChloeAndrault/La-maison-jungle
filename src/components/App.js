@@ -5,6 +5,7 @@ import Cart from './Cart'
 import Footer from './Footer'
 import Hero from './Hero'
 import ShoppingList from './ShoppingList'
+import Phone from './Phone'
 
 import '../styles/Layout.scss'
 
@@ -36,7 +37,11 @@ function App() {
 						<h2 className='ps-subtitle'>by Chloé A</h2>
 					</div>
 				</Banner>
-				<Cart cart={cart} updateCart={updateCart} />
+
+				<div className="right flex">
+					<Phone></Phone>
+					<Cart cart={cart} updateCart={updateCart} />
+				</div>
 			</div>
 
 			<div className="container-body">

@@ -1,0 +1,35 @@
+.right{
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.ps-phone{
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  background-color: #31b572;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  transition: all .4s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 10px;
+  transition: all .4s ease;
+
+  &:hover{
+    background-color: #478867;
+    transition: all .4s ease;
+  }
+
+  img{
+    width: 22px;
+  }
+}
