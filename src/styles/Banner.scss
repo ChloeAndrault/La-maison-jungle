@@ -1,3 +1,14 @@
+.body{
+	position: relative;
+}
+
+.container.header{
+	background-color: #f1f1f1;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
 .ps-banner {
 	@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display&display=swap');
 	display: flex;

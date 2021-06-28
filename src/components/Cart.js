@@ -1,32 +1,41 @@
 import { useState, useEffect } from 'react'
 import '../styles/Cart.scss'
-import basketBlack from '../assets/basket-black.svg'
-import basketGreen from '../assets/basket-green.svg'
+import basketWhite from '../assets/basket-white.svg'
 
-
-function Cart({ cart, updateCart }) {
+function Cart({ cart, updateCart, amount }) {
 	const [isOpen, setIsOpen] = useState(true)
 	const items = Object.keys(cart)
+
 	const total = items.reduce(
 		// Total récupéré avec l'accumulateur de reduce
 		(acc, item) => acc + cart[item].amount * cart[item].price,
 		0
 	)
+
 	useEffect(() => {
 		document.title = `ps: ${total}€ d'achats`
 	}, [total])
 
+	const product = items.reduce(
+		(acc, item) => acc + cart[item].amount,
+		0
+	)
 
 	return isOpen ? (
+
+		
 		<div className='ps-cart open'>
 			<button
 				className='ps-cart-toggle-button'
 				onClick={() => setIsOpen(false)}
 			>
-				Fermer
-				<img src={basketGreen} alt='Panier'  />
-			</button>
+				<img src={basketWhite} alt='Panier'  />
 
+				<div className="number">
+					{product}
+				</div>
+
+			</button>
 
 			{cart.length > 0 ? (
 				<div class="content-basket">
@@ -42,8 +51,10 @@ function Cart({ cart, updateCart }) {
 					<h3>Total :{total}€</h3>
 					<button onClick={() => updateCart([])}>Vider le panier</button>
 				</div>
-			) : (
-				<div>Votre panier est vide</div>
+			) : ( 
+				<div class="content-basket">
+					Votre panier est vide
+				</div>
 			)}
 		</div>
 	) : (
@@ -52,8 +63,8 @@ function Cart({ cart, updateCart }) {
 				className='ps-cart-toggle-button'
 				onClick={() => setIsOpen(true)}
 			>
-				Ouvrir le Panier
-				<img src={basketBlack} alt='Panier'  />
+				<img src={basketWhite} alt='Panier'  />
+
 
 			</button>
 		</div>

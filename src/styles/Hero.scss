@@ -1,0 +1,55 @@
+.ps-hero{
+  height: 530px;
+  background-color: #c6d2c6;
+	@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display&display=swap');
+
+  .wrapper{
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .hero-img{
+    width: 37%;
+    padding: 0;
+    margin: 0;
+    img{
+      width: 100%;
+    }
+  }
+
+  .content-plants{
+    width: 34%;
+    margin-left: 10%;
+    text-align: right;
+    margin-right: auto;
+
+    h3, h4, h5{
+      padding: 0;
+      margin: 0;
+    }
+
+    h3{
+			font-family: 'Mr De Haviland', cursive;
+      font-size: 40px;
+      letter-spacing: 2px;
+      color: #7f987f;
+    }
+
+    h4{
+			font-family: 'Playfair Display', serif;
+      font-size: 50px;
+    }
+
+    h5{
+			font-family: 'Playfair Display', serif;
+      color: #7f987f;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  }
+}
