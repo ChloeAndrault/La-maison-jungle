@@ -1,0 +1,46 @@
+.c-logo{
+  display: flex;
+  .logo {
+    width: 220px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .content {
+    margin-top: 28px;
+
+    .title {
+      margin: 0;
+      padding: 0;
+
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 40px;
+
+      &:after {
+        content: '';
+        width: 100px;
+        height: 2px;
+        display: block;
+        background-color: #EECEBD;
+        margin: 10px auto 0;
+      }
+    }
+
+    .subtitle {
+      margin: 0;
+      padding: 0;
+
+      text-align: center;
+      font-family: 'Mr De Haviland', cursive;
+      font-size: 30px;
+      letter-spacing: 2px;
+
+      margin-top: 15px;
+      color: #97b79c;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.c-categories {
+	text-align: center;
+	padding-top: 30px;
+	border-right: #31b572;
+
+	position: absolute;
+	left: 20px;
+	display: block;
+	width: 200px;
+
+	label{
+		text-align: center;
+		display: block;
+		font-size: 20px;
+	}
+	
+	select.categories-select {
+		width: 100%;
+		margin-top: 10px;
+		height: 30px;
+	}
+
+	button{
+		display: block;
+		margin-top: 2rem;
+	}
+}

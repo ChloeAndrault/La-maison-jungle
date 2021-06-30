@@ -1,9 +1,14 @@
+.body{
+	position: relative;
+	@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display&display=swap');
+}
+
 .container {
 	display: flex;
 	flex-direction: row;
 }
 
-.container-body{
+main{
 	margin-top: 180px;
 }
 
@@ -11,3 +16,12 @@
 	display: flex;
 }
 
+.wrapper{
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}

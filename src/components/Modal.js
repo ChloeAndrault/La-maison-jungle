@@ -1,6 +1,5 @@
 import React from 'react'
-import '../styles/Modal.scss'
-
+import '../styles/header/Modal.scss'
 
 export default function Modal(props) {
   return (

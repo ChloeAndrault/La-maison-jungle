@@ -1,14 +1,15 @@
-import '../styles/Categories.scss'
+import '../styles/main/Categories.scss'
 
 function Categories({ setActiveCategory, categories, activeCategory }) {
 	return (
-		<div className='ps-categories'>
+		<div className='c-categories'>
+			<label>Catégories :</label>
 			<select
 				value={activeCategory}
 				onChange={(e) => setActiveCategory(e.target.value)}
-				className='ps-categories-select'
+				className='categories-select'
 			>
-				<option value=''>---</option>
+				<option value=''>Select a category</option>
 				{categories.map((cat) => (
 					<option key={cat} value={cat}>
 						{cat}

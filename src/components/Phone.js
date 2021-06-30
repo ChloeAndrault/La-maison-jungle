@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Modal from './Modal'
-import '../styles/Phone.scss'
+import '../styles/header/Phone.scss'
 import phoneIcon from '../assets/phone.svg'
 
 export default class Phone extends Component {
@@ -23,9 +23,9 @@ export default class Phone extends Component {
 
   render() {
     return (
-      <div className="test-modal">
+      <div className="c-phone">
 
-        <button className="ps-phone" onClick={this.montre}> 
+        <button className="phone" onClick={this.montre}> 
           <img src={phoneIcon} alt='Contactez nous par téléphone'  />
         </button>
 

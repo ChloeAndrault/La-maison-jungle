@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { plantList } from '../datas/plantList'
 import PlantItem from './PlantItem'
 import Categories from './Categories'
-import '../styles/ShoppingList.scss'
+import '../styles/main/ShoppingList.scss'
 
 function ShoppingList({ cart, updateCart }) {
 
@@ -40,33 +40,34 @@ function ShoppingList({ cart, updateCart }) {
 	}
 
 	return (
-		<div className='ps-shopping-list'>
+		<div className='c-shopping-list'>
 			<Categories
 				categories={categories}
 				setActiveCategory={setActiveCategory}
 				activeCategory={activeCategory}
 			/>
 
-			<ul className='ps-plant-list'>
-				{plantList.map(({ id, cover, name, water, light, price, category }) =>
-					!activeCategory || activeCategory === category ? (
-						<div key={id}>
-							<PlantItem
-								cover={cover}
-								name={name}
-								category={category}
-								water={water}
-								light={light}
-								price={price}
-							/>
-							<button onClick={() => addToCart(name, price)}>Ajouter</button>
-						</div>
-					) : null
-				)}
-			</ul>
+			<div className="wrapper">
+				<ul className='plant-list'>
+					{plantList.map(({ id, cover, name, water, light, price, category }) =>
+						!activeCategory || activeCategory === category ? (
+							<li className="plant" key={id}>
+								<PlantItem
+									cover={cover}
+									name={name}
+									category={category}
+									water={water}
+									light={light}
+									price={price}
+								/>
+								<button onClick={() => addToCart(name, price)}>Ajouter</button>
+							</li>
+						) : null
+					)}
+				</ul>
+			</div>
 		</div>
 	)
-
 }
 
 export default ShoppingList
